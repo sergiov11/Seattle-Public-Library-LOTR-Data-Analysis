@@ -1,0 +1,68 @@
+---
+title: "Seattle Public Library Checkouts"
+subtitle: "By Sergio V.L."
+output: html_document
+---
+
+### Introduction
+
+The data we are analyzing for this assignment comes from the Seattle Public Library and it contains information about the checkout process while also making sure that the identity of the people who checked the items out is kept anonymous. I will be analyzing checkout data related to The Lord of the Rings book saga to find trends or increases over the years 2007 to 2023. I am particularly curious about how COVID affected these checkout numbers and if a saga so big and popular like The Lord of the Rings was affected or benefited by this.
+
+### Summary Information
+
+```{r ,echo=FALSE, message=FALSE}
+library(dplyr)
+library("stringr")
+source("summary.R")
+```
+
+As mentioned earlier, I choose to analyze the Seattle Public Library data related to the author J. R. R. Tolkien and his popular book series "The Lord of the Rings". Analyzing this data gave me some very interesting insight that I will be discussing in this short summary paragraph. One of the things I learned from this data is that the book from the saga with the most checkouts at the Seattle Public Library is "`r book_max_checkouts`" and similarly, the most common type of items being checked out was the `r most_popular_material`. Some other interesting information was how the year with the most checkouts was `r year_max_checkouts` with a mean of `r mean_checkout_2022`  of books per month. Lastly, I wanted to know a cool random fact and I learned that the year with the least amount of eBooks checked out was `r year_min_checkouts_ebook`.
+
+### The Dataset
+
+**- Who collected/published the data?**
+
+  The data was collected by the Seattle Public Library.
+
+**- What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?**
+
+  The parameters of the data are: Usage class, checkout types, material type, checkout year, checkout month, number of checkouts, title, creator, ISBN number, subjects, publisher, and publication year.
+
+**- How was the data collected or generated?**
+
+  The data was collected through a program that helps to keep the data de-identified from patrons so the patrons identity maintains anonymous. However, the program allows for all the other data related to checkouts to be collected so people like use can identify interesting patterns or trends in the data. 
+
+**- Why was the data collected?**
+
+Part of the reason this data started being collected was because of a broader open data initiative that was put in place by the Barack Obama administration. Additionally, even though this program started in 2017, the Seattle Public Library has data going back all the way to the year 2005 due to the fact that an artist/professor was collecting data to design a data visualization exhibition to represent what people where checking out in the library. 
+
+**- What, if any, ethical questions do you need to consider when working with this data?**
+
+I think it's important to remember that the data you are analyzing came from real people who might or might not be aware that what they are checking out is being collected regardless if their identity is being kept private. This is why it is important that we are respectful with the data and to not judge people for what they choose to checkout.
+
+**- What are possible limitations or problems with this data?   (at least 200 words)**
+
+One of the possible limitations of this data could be the fact that only the checkout year and month are provided and not the day. Having the exact day that the data was collected could be really useful when trying to identify when exactly changes in the data started to happen and it could help to make some of the calculations more precise. Another limitation could be the language since some of the values in the data are in other languages and this could create a language barrier and make the data collection process more complicated to visualize and understand for those who can’t speak that certain language. When it comes to problems, one of them is that the data is really messy so it requires some cleaning in order to make sure you are getting the correct value when calculating something. This is especially the case with the dates since the check-out year and month are both different columns that need to be merged together and converted to dates so RStudio doesn't have any trouble with them. Lastly, the data is not consistent when it comes to creators/authors and there are some cases in which an author’s name is displayed in totally different ways which can cause it to get excluded from the data. This in turn can create incorrect calculations and negatively impact both our answers and data visualizations.
+
+### First Trends Over Time Chart
+
+The first chart I made represents the number of checkouts for each book in The Lord of the Rings saga from the years 2007 all the way to 2023. An interesting finding that I learned after visualizing the data was the fact that the first book in the series "The Fellowship of the Ring" has always been the one that people check out the most and the other two in the series are checked out in order of release. Another interesting fact about the data is how there was a spike in the number of checkouts between the years 2020 and 2022. I think it would be interesting to see how big of a part the COVID pandemic played a role in this.
+
+``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart1_Sergio.R")}
+```
+
+### Second Trends Over Time Chart
+
+The second graph I made represents the number of books checked out by type from the years 2007 to 2023. This graph gives us pretty interesting information since at first the number of audiobooks and ebooks being checked out was small but as time passed, they both saw a steady increase in numbers. However, the number of audiobooks kept increasing significantly more after 2015, and similarly to the first book in the series, it also had peak numbers between the years 2020 and 2022. My hypothesis based on the data is that the reason people prefer audiobooks is because of the convenience and also because it offers entertainment similar to that of a podcast.
+
+``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart2_Sergio.R")}
+```
+
+### Your Choice
+
+Lastly, for my final graph I decided to represent the number of books checked out but this time I did it by year published and by the publisher. A cool fact that I learned from this data visualization is that the publisher Recorded Books, LLC had the most number of checkouts with more than 7000 in the year 2020. I found it interesting how the publisher that came the closest to Recorded Books, LLC is HighBridge Company with almost 3000 checkouts but it was 13 years ago in the year 2007.
+
+``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart3_Sergio.R")}
+```
+
+
