@@ -1,4 +1,4 @@
-# Assignment 3: SPL Library Checkouts
+# SPL Library Checkouts
 
 GitHub Page: https://github.com/sergiov11/Seattle-Public-Library-LOTR-Data-Analysis
 
