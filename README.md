@@ -1,6 +1,6 @@
 # SPL Library Checkouts
 
-GitHub Page: https://github.com/sergiov11/Seattle-Public-Library-LOTR-Data-Analysis
+GitHub Page: https://raw.githack.com/sergiov11/Seattle-Public-Library-LOTR-Data-Analysis/main/index.html
 
 # Data
 
